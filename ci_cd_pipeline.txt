@@ -1,0 +1,35 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Initialize"){
+            step{
+                bat 'git init'
+            }
+        }
+
+        stage("Add Files"){
+            step{
+                bat 'git add .'
+            }
+        }
+
+        stage("Commit"){
+            step{
+                bat 'git commit -m "Initial commit"
+            }
+        }
+
+        stage("Push the File"){
+            step{
+                bat 'git push -u origin main
+            }
+        }
+
+        stage("Build"){
+            step{
+
+            }
+        }
+    }
+}
